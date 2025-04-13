@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Binance Pro Admin</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <h1>Binance Pro Admin Panel</h1>
+
+  <h2>Admin Controls</h2>
+
+  <!-- KYC Approval -->
+  <input type="text" id="kycUserId" placeholder="Enter User ID for KYC" />
+  <button onclick="approveKYC(document.getElementById('kycUserId').value)">
+    Approve KYC
+  </button>
+
+  <br><br>
+
+  <!-- Add Funds -->
+  <input type="text" id="fundUserId" placeholder="User ID" />
+  <select id="fundCoin">
+    <option value="BTC">BTC</option>
+    <option value="ETH">ETH</option>
+    <option value="USDT">USDT</option>
+    <option value="BNB">BNB</option>
+  </select>
+  <input type="number" id="fundAmount" placeholder="Amount" />
+  <button onclick="addFunds(
+    document.getElementById('fundUserId').value,
+    document.getElementById('fundCoin').value,
+    document.getElementById('fundAmount').value)">
+    Add Virtual Funds
+  </button>
+
+  <br><br>
+
+  <!-- Load Users Button -->
+  <button onclick="loadUsers()">Refresh Users</button>
+  <pre id="userOutput"></pre>
+
+  <script src="script/main.js"></script>
+</body>
+</html>
